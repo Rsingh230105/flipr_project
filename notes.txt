@@ -1,0 +1,17 @@
+This file was added by GitHub Copilot on 2025-12-09 as a small test note.
+
+- Purpose: Example file to demonstrate creating, staging, and committing a file locally.
+- Commit message used: "chore: add notes.txt"
+
+If you want me to add a GitHub remote and push this commit for you, reply with the repository URL (e.g. `https://github.com/yourusername/flipr.git`) and whether you prefer HTTPS (you'll need a PAT) or SSH.
+
+If you'd rather push yourself, run these commands in PowerShell from the repo root:
+
+```
+cd 'C:\Users\RAVI\OneDrive\Desktop\Flipr'
+git remote add origin https://github.com/yourusername/flipr.git
+git branch -M main
+git push -u origin main
+```
+
+Thanks — tell me how you'd like to proceed.
