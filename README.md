@@ -1,5 +1,7 @@
 # Flipr Full-Stack (Django + React)
 
+![CI](https://github.com/Rsingh230105/flipr_project/actions/workflows/ci.yml/badge.svg)
+
 A modern, responsive full-stack Flipr-style project built with Django REST Framework (DRF) backend and React (Vite) frontend.
 
 ## Features
