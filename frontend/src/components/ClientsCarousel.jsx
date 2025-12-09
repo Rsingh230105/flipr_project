@@ -7,7 +7,10 @@ export default function ClientsCarousel() {
 
   useEffect(() => {
     api.get('/clients/')
-      .then((res) => setClients(res.data))
+      .then((res) => {
+        const data = Array.isArray(res.data) ? res.data : (res.data.results || res.data.value || [])
+        setClients(data)
+      })
       .catch((err) => setError(api.handleError(err)))
   }, [])
 

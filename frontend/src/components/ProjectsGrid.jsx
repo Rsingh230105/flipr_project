@@ -11,7 +11,11 @@ export default function ProjectsGrid() {
     let mounted = true
     api.get('/projects/')
       .then((res) => {
-        if (mounted) setProjects(res.data)
+        if (mounted) {
+          // Handle both direct array response and paginated response {results: [...]}
+          const data = Array.isArray(res.data) ? res.data : (res.data.results || res.data.value || [])
+          setProjects(data)
+        }
       })
       .catch((err) => setError(api.handleError(err)))
       .finally(() => mounted && setLoading(false))
