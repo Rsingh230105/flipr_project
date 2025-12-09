@@ -72,6 +72,27 @@ npm run dev
 ```
 Frontend runs at: **http://localhost:3000**
 
+### Frontend smoke tests
+
+I added a simple Node smoke-test that checks the dev frontend and API without a browser download. Run this from the `frontend` folder while `npm run dev` and Django are running:
+
+```powershell
+cd frontend
+node smoke_check.js
+```
+
+If you want full end-to-end UI tests, Playwright is configured under `frontend/playwright.config.js` and a basic test exists at `frontend/tests/home.spec.js`. Playwright requires browser binaries — install and run locally with:
+
+```powershell
+cd frontend
+npm install
+npx playwright install
+npm run dev   # in one terminal (runs at http://localhost:3001)
+npx playwright test
+```
+
+If the Playwright browser download fails in your environment, you can skip it and use `smoke_check.js` as a lightweight alternative.
+
 ---
 
 ## API Endpoints
@@ -210,6 +231,21 @@ heroku run python manage.py createsuperuser
 docker-compose up -d
 # Access at http://localhost:8000
 ```
+
+### Docker frontend preview (nginx)
+
+The repository includes a frontend Dockerfile and `nginx` config. To build and preview the production frontend together with the backend via Docker Compose:
+
+```powershell
+# From repo root
+docker-compose build frontend
+docker-compose up -d web db frontend
+# Frontend production preview available at http://localhost:3002
+```
+
+Notes:
+- `frontend` service serves the built static files via nginx and proxies `/api/` to the `web` service.
+- If you only want to preview frontend without backend API, you can run the `frontend` image alone, but API calls will fail unless `web` is available.
 
 ---
 
