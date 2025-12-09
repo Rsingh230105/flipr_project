@@ -19,7 +19,14 @@ export default function ProjectsGrid() {
   }, [])
 
   if (loading) {
-    return <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><div className="h-32 bg-gray-200 animate-pulse col-span-full" /></div>
+    // show several skeleton cards for perceived performance on mobile
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[1,2,3].map((i) => (
+          <div key={i} className="h-48 bg-gray-200 rounded-lg animate-pulse" />
+        ))}
+      </div>
+    )
   }
 
   if (error) {

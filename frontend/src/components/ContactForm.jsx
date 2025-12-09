@@ -23,23 +23,23 @@ export default function ContactForm() {
   }
 
   return (
-    <form id="contact" onSubmit={handleSubmit} className="bg-white p-6 rounded shadow">
+    <form id="contact" aria-label="Contact form" onSubmit={handleSubmit} className="bg-white p-6 rounded shadow">
       <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
       <label className="block mb-2">
         <span className="text-sm">Name</span>
-        <input name="name" value={form.name} onChange={handleChange} required className="mt-1 block w-full rounded border px-3 py-2" />
+        <input aria-label="Your name" name="name" value={form.name} onChange={handleChange} required className="mt-1 block w-full rounded border px-3 py-2" />
       </label>
       <label className="block mb-2">
         <span className="text-sm">Email</span>
-        <input name="email" value={form.email} onChange={handleChange} type="email" required className="mt-1 block w-full rounded border px-3 py-2" />
+        <input aria-label="Your email" name="email" value={form.email} onChange={handleChange} type="email" required className="mt-1 block w-full rounded border px-3 py-2" />
       </label>
       <label className="block mb-2">
         <span className="text-sm">Mobile (optional)</span>
-        <input name="mobile" value={form.mobile} onChange={handleChange} placeholder="+911234567890" className="mt-1 block w-full rounded border px-3 py-2" />
+        <input aria-label="Your mobile" name="mobile" value={form.mobile} onChange={handleChange} placeholder="+911234567890" className="mt-1 block w-full rounded border px-3 py-2" />
       </label>
       <label className="block mb-3">
         <span className="text-sm">Message</span>
-        <textarea name="message" value={form.message} onChange={handleChange} required className="mt-1 block w-full rounded border px-3 py-2" rows="4" />
+        <textarea aria-label="Message" name="message" value={form.message} onChange={handleChange} required className="mt-1 block w-full rounded border px-3 py-2" rows="4" />
       </label>
 
       <div className="flex items-center gap-3">

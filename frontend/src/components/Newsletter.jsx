@@ -23,7 +23,7 @@ export default function Newsletter() {
   }
 
   return (
-    <form onSubmit={handleSubscribe} className="bg-white p-6 rounded shadow">
+    <form aria-label="Newsletter form" onSubmit={handleSubscribe} className="bg-white p-6 rounded shadow">
       <h3 className="text-lg font-semibold mb-3">Newsletter</h3>
       <p className="text-sm mb-3">Join our newsletter for product updates.</p>
       <input
@@ -33,6 +33,7 @@ export default function Newsletter() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="w-full rounded border px-3 py-2 mb-3"
+        aria-label="Email for newsletter"
       />
       <div className="flex items-center gap-3">
         <button type="submit" disabled={loading} className="px-4 py-2 bg-green-600 text-white rounded">

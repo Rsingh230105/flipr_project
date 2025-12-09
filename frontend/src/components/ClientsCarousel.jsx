@@ -15,9 +15,9 @@ export default function ClientsCarousel() {
   if (!clients.length) return <div className="text-gray-500">No clients yet</div>
 
   return (
-    <div id="clients" className="flex overflow-x-auto gap-6 py-4">
+    <div id="clients" className="flex overflow-x-auto gap-6 py-4" role="list" aria-label="Client testimonials">
       {clients.map((c) => (
-        <div key={c.id} className="min-w-[180px] bg-white p-4 rounded shadow flex-shrink-0">
+        <div key={c.id} className="min-w-[180px] bg-white p-4 rounded shadow flex-shrink-0" role="listitem">
           {c.logo ? <img src={c.logo} alt={c.name} className="h-12 object-contain mb-2" /> : null}
           <div className="font-semibold text-sm">{c.name}</div>
           {c.company && <div className="text-xs text-gray-500">{c.company}</div>}
